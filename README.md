@@ -8,6 +8,7 @@ Flutter Dynamic Form allow user to create form easily
 
 <li>Multiple editor textfield, colorpicker, date, dateTime, checkbox</li>
 <li>Multiple validator</li>
+<li>Create object form on the fly</li>
 <li>Localization Fr, En, Es, De</li>
 
 </td></tr></table>

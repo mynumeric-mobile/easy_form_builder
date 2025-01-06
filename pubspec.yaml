@@ -1,7 +1,7 @@
 name: flutter_dynamic_form
-description: "A new Flutter plugin project."
+description: "Flutter Dynamic Form allow user to create form easily."
 version: 0.0.1
-homepage:
+homepage: https://github.com/mynumeric-mobile/flutter_dynamic_form
 
 # This package supports all platforms listed below.
 platforms:
