@@ -99,7 +99,7 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
-  flutter_dynamic_form:
+  flutter_easy_form:
     dependency: "direct main"
     description:
       path: ".."

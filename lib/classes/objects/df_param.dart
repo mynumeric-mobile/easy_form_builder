@@ -59,7 +59,6 @@ class DfCfgParam {
 
   /// allow display enlaged field (for example for comment)
   int? usedColumn;
-  double? usedRow;
 
   List<Validator>? validators;
 
@@ -75,7 +74,6 @@ class DfCfgParam {
       this.comment,
       this.dataSource,
       this.usedColumn,
-      this.usedRow,
       this.isDisplayable,
       this.maxTextFieldLine = 1,
       this.validators});

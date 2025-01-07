@@ -1,8 +1,8 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_dynamic_form/flutter_dynamic_form.dart';
-import 'package:flutter_dynamic_form_example/ws_form.dart';
+import 'package:flutter_easy_form/flutter_easy_form.dart';
+import 'package:flutter_easy_form_example/ws_form.dart';
 
 void main() {
   runApp(const MyApp());

@@ -1,6 +1,6 @@
-# flutter_dynamic_form_example
+# flutter_easy_form_example
 
-Demonstrates how to use the flutter_dynamic_form plugin.
+Demonstrates how to use the flutter_easy_form plugin.
 
 ## Getting Started
 

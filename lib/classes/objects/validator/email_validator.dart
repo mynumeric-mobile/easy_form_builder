@@ -1,4 +1,4 @@
-import 'package:flutter_dynamic_form/classes/helper.dart/localization.dart';
+import 'package:flutter_easy_form/classes/helper.dart/localization.dart';
 
 import 'validator.dart';
 

@@ -19,7 +19,7 @@ class FlutterDynamicForm extends StatefulWidget {
       required this.paramValues,
       this.onChange,
       this.forcedColumnNumber,
-      this.baseRowSize = 50,
+      //this.baseRowSize = 50,
       this.colSpacing = 4,
       this.rowSpacing = 5,
       this.forceReadOnly = false,
@@ -34,7 +34,7 @@ class FlutterDynamicForm extends StatefulWidget {
 
   final TextStyle? textStyle;
 
-  final double baseRowSize;
+  //final double baseRowSize;
   final double colSpacing;
   final double rowSpacing;
   final bool border;
@@ -150,7 +150,7 @@ class _FlutterDynamicFormState extends State<FlutterDynamicForm> {
               )),
               Checkbox(
                   visualDensity: VisualDensity.compact,
-                  value: widget.paramValues[param.id],
+                  value: widget.paramValues[param.id] ?? false,
                   onChanged: (v) {
                     if ((v ?? false) == widget.paramValues[param.id]) return;
                     widget.paramValues[param.id] = v ?? false;
