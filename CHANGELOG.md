@@ -12,3 +12,5 @@
 * small improvment.
 ## 1.0.5
 * dart format improvment.
+## 1.0.6
+* adjust padding on textfield using border.
