@@ -12,7 +12,8 @@ class TextLengthValidator extends Validator {
   TextLengthValidator(this.requiredLength, {this.message});
 
   @override
-  String get errorMessage => message ?? localizationOptions.invalidCharacterNumber;
+  String get errorMessage =>
+      message ?? localizationOptions.invalidCharacterNumber;
 
   @override
   bool isValid(value, Map<String, dynamic> paramValues) {

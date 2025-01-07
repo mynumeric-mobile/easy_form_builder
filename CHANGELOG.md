@@ -10,3 +10,5 @@
 * adding URL validator.
 ## 1.0.4
 * small improvment.
+## 1.0.5
+* dart format improvment.

@@ -89,7 +89,7 @@ class _BnTextFieldState extends State<BnTextField> {
         border: widget.border ? OutlineInputBorder() : null,
         helperMaxLines: 5,
         isDense: true,
-        contentPadding: const EdgeInsets.all(0),
+        contentPadding: const EdgeInsets.all(5),
         prefixIcon: widget.password && widget.prefixIcon == null ? const Icon(Icons.lock_rounded, size: 24) : centerPrfix(),
         suffix: widget.password
             ? Padding(

@@ -20,7 +20,8 @@ class PasswordValidator extends Validator {
     if (password == null) {
       return true;
     }
-    RegExp emailRegExp = RegExp(r"^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[$&+,:;=?@#|'<>.^*()%!-]).{8,}$");
+    RegExp emailRegExp = RegExp(
+        r"^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[$&+,:;=?@#|'<>.^*()%!-]).{8,}$");
 
     return emailRegExp.hasMatch(password);
   }
