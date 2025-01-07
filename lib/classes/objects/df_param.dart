@@ -39,8 +39,7 @@ class DfCfgParam {
   /// field is read only
   bool readOnly = false;
 
-  /// optional function field is displayed if returned value is true
-  Function? isDisplayable;
+  bool Function(Map<String, dynamic>)? isDisplayable;
 
   /// field use wildcard
   bool isPassword;
@@ -74,6 +73,8 @@ class DfCfgParam {
       this.comment,
       this.dataSource,
       this.usedColumn,
+
+      /// optional function field is displayed if returned value is true
       this.isDisplayable,
       this.maxTextFieldLine = 1,
       this.validators});
@@ -81,8 +82,7 @@ class DfCfgParam {
   castValue(dynamic val) {
     switch (type) {
       case const (double):
-        return double.tryParse(val
-            .toString()); //for some case double become int force so val to double
+        return double.tryParse(val.toString()); //for some case double become int force so val to double
       case const (int):
         return int.tryParse(val.toString());
       case const (num):

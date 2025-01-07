@@ -64,11 +64,11 @@ class _WsColorPickerState extends State<WsColorPicker> {
                 visualDensity: widget.visualDensity),
             onPressed: () {
               PopupHelper.showDialog(icon: Icons.color_lens, context,
-                  StatefulBuilder(builder: (BuildContext context, StateSetter popupState) {
+                  StatefulBuilder(builder: (BuildContext popupctx, StateSetter popupState) {
                 return SizedBox(
-                    height: min(MediaQuery.of(context).orientation == Orientation.portrait ? 600 : 400,
-                        MediaQuery.of(context).size.height * 0.9),
-                    width: min(700, MediaQuery.of(context).size.width * 0.9),
+                    height: min(MediaQuery.of(popupctx).orientation == Orientation.portrait ? 600 : 400,
+                        MediaQuery.of(popupctx).size.height * 0.9),
+                    width: min(700, MediaQuery.of(popupctx).size.width * 0.9),
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: GradientSelector(
