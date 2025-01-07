@@ -90,7 +90,9 @@ class _BnTextFieldState extends State<BnTextField> {
         helperMaxLines: 5,
         isDense: true,
         contentPadding: EdgeInsets.all(widget.border ? 10 : 5),
-        prefixIcon: widget.password && widget.prefixIcon == null ? const Icon(Icons.lock_rounded, size: 24) : centerPrfix(),
+        prefixIcon: widget.password && widget.prefixIcon == null
+            ? const Icon(Icons.lock_rounded, size: 24)
+            : Padding(padding: EdgeInsets.only(right: 3), child: centerPrefix()),
         suffix: widget.password
             ? Padding(
                 padding: const EdgeInsets.only(right: 4.0),
@@ -123,7 +125,7 @@ class _BnTextFieldState extends State<BnTextField> {
     });
   }
 
-  centerPrfix() {
+  centerPrefix() {
     var child = widget.prefixIcon;
     return widget.maxLine > 1
         ? Padding(
