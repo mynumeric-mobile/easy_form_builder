@@ -4,3 +4,5 @@
 * update doc.
 ## 1.0.1
 * rename required validator.
+## 1.0.2
+* adding phone validator.

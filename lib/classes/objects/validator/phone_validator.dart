@@ -2,10 +2,10 @@ import 'package:easy_form_builder/classes/helper.dart/localization.dart';
 
 import 'validator.dart';
 
-class EmailValidator extends Validator {
+class PhoneValidator extends Validator {
   final String? message;
 
-  EmailValidator({this.message});
+  PhoneValidator({this.message});
 
   @override
   String get errorMessage => message ?? localizationOptions.invalidPhone;
