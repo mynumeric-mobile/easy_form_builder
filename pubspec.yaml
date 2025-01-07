@@ -1,5 +1,5 @@
 name: easy_form_builder
-description: "Flutter easy form builder allow user to create form easily."
+description: "Flutter easy form builder allow user to create form easily. Follow example to understand features"
 version: 1.0.1
 homepage: https://github.com/mynumeric-mobile/easy_form_builder
 
@@ -16,7 +16,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  intl: ^0.19.0
+  intl: ^0.20.1
   flutter_staggered_grid_view: ^0.7.0
   flutter_gradient_selector: ^1.0.12
   dynamic_fonts: ^2.2.1
