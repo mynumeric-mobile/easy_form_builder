@@ -5,6 +5,9 @@ import 'validator.dart';
 class PhoneValidator extends Validator {
   final String? message;
 
+  ///
+  /// Phone validator
+  ///
   PhoneValidator({this.message});
 
   @override

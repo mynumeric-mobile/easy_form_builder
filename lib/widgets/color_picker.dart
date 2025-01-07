@@ -7,15 +7,29 @@ import 'package:flutter_gradient_selector/helpers/localization.dart';
 
 import '../classes/helper.dart/popup_helper.dart';
 
-// ignore: must_be_immutable
+///
+/// provide colorpicker widget
+///
 class WsColorPicker extends StatefulWidget {
   const WsColorPicker(
       {super.key,
+
+      /// current color
       required this.color,
+
+      /// fire on color selection change
       this.onChange,
+
+      /// popup title
       this.title,
+
+      /// if true provide gradient color picker
       this.allowGradientMode = false,
+
+      /// hold color history shortcut
       this.colorHistory,
+
+      /// visual density
       this.visualDensity = VisualDensity.standard});
   final dynamic color;
   final String? title;

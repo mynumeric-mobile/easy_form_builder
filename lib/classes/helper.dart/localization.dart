@@ -4,11 +4,13 @@ enum LocalisationCode { fr, en, es, de }
 LocalizationOptions? _localizationOptions;
 
 /// Get currently used localization options
-LocalizationOptions get localizationOptions => _localizationOptions ?? LocalizationOptions(LocalisationCode.en);
+LocalizationOptions get localizationOptions =>
+    _localizationOptions ?? LocalizationOptions(LocalisationCode.en);
 
 /// Set localization options (translations) to this report mode
 LocalizationOptions setLocalizationOptions(LocalisationCode? code) {
-  _localizationOptions = LocalizationOptions._localizationMessages[code ?? LocalisationCode.en];
+  _localizationOptions =
+      LocalizationOptions._localizationMessages[code ?? LocalisationCode.en];
   return _localizationOptions ?? LocalizationOptions(LocalisationCode.en);
 }
 
@@ -24,6 +26,7 @@ class LocalizationOptions {
   final String invalidCharacterNumber;
   final String invalidPhone;
   final String invalidFormat;
+  final String invalidUrl;
 
   LocalizationOptions(this.languageCode,
       {this.ok = "Ok",
@@ -35,9 +38,11 @@ class LocalizationOptions {
       this.invalidPassword = "Mot de passe invalide",
       this.invalidCharacterNumber = "Nombre de caractères invalide",
       this.invalidPhone = "Numéro invalide",
-      this.invalidFormat = "Format invalide"});
+      this.invalidFormat = "Format invalide",
+      this.invalidUrl = "Adresse invalide"});
 
-  static final Map<LocalisationCode, LocalizationOptions> _localizationMessages = {
+  static final Map<LocalisationCode, LocalizationOptions>
+      _localizationMessages = {
     LocalisationCode.en: LocalizationOptions(LocalisationCode.en),
     LocalisationCode.fr: LocalizationOptions(LocalisationCode.fr,
         ok: "Ok",
@@ -50,7 +55,8 @@ class LocalizationOptions {
             "Le mot de passe doit contenir :\n 8 caractères, 1 majuscule, 1 minuscule, 1 chiffre, 1 caractère spécial.",
         invalidCharacterNumber: "Nombre de caractères invalide",
         invalidPhone: "Numéro invalide",
-        invalidFormat: "Format invalide"),
+        invalidFormat: "Format invalide",
+        invalidUrl: "Adresse invalide"),
     LocalisationCode.es: LocalizationOptions(LocalisationCode.es,
         ok: "Ok",
         cancel: "Cancelar",
@@ -58,10 +64,12 @@ class LocalizationOptions {
         remainingTime: "Tiempo restante",
         emptyField: "Este campo es obligatorio",
         invalidEmail: "Email inválida",
-        invalidPassword: "La contraseña debe contener: n 8 caracteres, 1 mayúsculas, 1 minúscula, 1 dígito, 1 carácter especial.",
+        invalidPassword:
+            "La contraseña debe contener: n 8 caracteres, 1 mayúsculas, 1 minúscula, 1 dígito, 1 carácter especial.",
         invalidCharacterNumber: "Número de caracteres no válido",
         invalidPhone: "Número no válido",
-        invalidFormat: "Formato no válido"),
+        invalidFormat: "Formato no válido",
+        invalidUrl: "URL no válida"),
     LocalisationCode.de: LocalizationOptions(LocalisationCode.de,
         ok: "Ok",
         cancel: "Abbrechen",
@@ -73,6 +81,7 @@ class LocalizationOptions {
             "Das Kennwort muss folgende Zeichen enthalten: n 8 Zeichen, 1 Großbuchstabe, 1 Kleinbuchstaben, 1 Ziffer, 1 Sonderzeichen.",
         invalidCharacterNumber: "Ungültige Anzahl der Zeichen",
         invalidPhone: "Ungültige Nummer",
-        invalidFormat: "Format ungültig")
+        invalidFormat: "Format ungültig",
+        invalidUrl: "Ungültige URL")
   };
 }

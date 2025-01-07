@@ -6,6 +6,9 @@ class RegexpValidator extends Validator {
   final String? message;
   final RegExp regExp;
 
+  ///
+  /// Reg Exp validator
+  ///
   RegexpValidator(this.regExp, {this.message});
 
   @override

@@ -6,6 +6,9 @@ class TextLengthValidator extends Validator {
   final int requiredLength;
   final String? message;
 
+  ///
+  /// Text length validator
+  ///
   TextLengthValidator(this.requiredLength, {this.message});
 
   @override

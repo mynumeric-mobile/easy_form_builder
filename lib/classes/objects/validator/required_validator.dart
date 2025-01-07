@@ -5,6 +5,9 @@ import 'validator.dart';
 class RequiredValidator extends Validator {
   final String? message;
 
+  ///
+  /// Required validator
+  ///
   RequiredValidator({this.message});
 
   @override

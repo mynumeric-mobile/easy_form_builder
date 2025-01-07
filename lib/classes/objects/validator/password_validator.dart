@@ -5,6 +5,9 @@ import 'validator.dart';
 class PasswordValidator extends Validator {
   final String? message;
 
+  ///
+  /// Password validator
+  ///
   PasswordValidator({this.message});
 
   @override

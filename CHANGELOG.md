@@ -6,3 +6,5 @@
 * rename required validator.
 ## 1.0.2
 * adding phone validator.
+## 1.0.3
+* adding URL validator.
