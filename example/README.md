@@ -1,6 +1,6 @@
-# flutter_easy_form_example
+# easy_form_builder_example
 
-Demonstrates how to use the flutter_easy_form plugin.
+Demonstrates how to use the easy_form_builder plugin.
 
 ## Getting Started
 

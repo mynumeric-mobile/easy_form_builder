@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_easy_form/classes/objects/df_param.dart';
-import 'package:flutter_easy_form/classes/objects/validator/not_null_or_empty_validator.dart';
-import 'package:flutter_easy_form/classes/objects/validator/email_validator.dart';
+import 'package:easy_form_builder/classes/objects/df_param.dart';
+import 'package:easy_form_builder/classes/objects/validator/not_null_or_empty_validator.dart';
+import 'package:easy_form_builder/classes/objects/validator/email_validator.dart';
 
 enum WsFormTypes {
   simpleContact,

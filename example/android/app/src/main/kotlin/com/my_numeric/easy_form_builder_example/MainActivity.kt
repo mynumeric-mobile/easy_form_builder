@@ -1,4 +1,4 @@
-package com.mynumeric.flutter_easy_form_example
+package com.mynumeric.easy_form_builder_example
 
 import io.flutter.embedding.android.FlutterActivity
 
