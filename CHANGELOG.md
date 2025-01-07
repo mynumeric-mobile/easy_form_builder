@@ -8,3 +8,5 @@
 * adding phone validator.
 ## 1.0.3
 * adding URL validator.
+## 1.0.4
+* small improvment.

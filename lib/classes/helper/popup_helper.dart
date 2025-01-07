@@ -7,7 +7,8 @@ import 'localization.dart';
 
 class PopupHelper {
   //
-  static void displayInfo(String message, context, {bool info = false, IconData icon = Icons.report_problem_outlined}) {
+  static void displayInfo(String message, context,
+      {bool info = false, IconData icon = Icons.report_problem_outlined}) {
     var ctx = context;
     ScaffoldMessenger.of(ctx).showSnackBar(SnackBar(
       content: Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
@@ -15,7 +16,10 @@ class PopupHelper {
         const SizedBox(
           width: 10,
         ),
-        Flexible(child: Text(message, style: const TextStyle().copyWith(color: Theme.of(context).colorScheme.onSecondary))),
+        Flexible(
+            child: Text(message,
+                style: const TextStyle().copyWith(
+                    color: Theme.of(context).colorScheme.onSecondary))),
       ]),
       backgroundColor: Theme.of(context).colorScheme.secondary,
       //backgroundColor:
@@ -24,7 +28,8 @@ class PopupHelper {
     ));
   }
 
-  Widget popupDialog(BuildContext context, String title, String text, button1, {button2}) {
+  Widget popupDialog(BuildContext context, String title, String text, button1,
+      {button2}) {
     return AlertDialog(
       backgroundColor: Colors.white,
       title: Text(
@@ -38,7 +43,10 @@ class PopupHelper {
           Text(text, style: Theme.of(context).textTheme.bodySmall),
         ],
       ),
-      actions: <Widget>[if (button1 != null) button1, if (button2 != null) button2],
+      actions: <Widget>[
+        if (button1 != null) button1,
+        if (button2 != null) button2
+      ],
     );
   }
 
@@ -70,12 +78,14 @@ class PopupHelper {
             button3: button3,
             button4: button4);
         return BackdropFilter(
-          filter: ImageFilter.blur(sigmaX: 4 * anim1.value, sigmaY: 4 * anim1.value),
+          filter: ImageFilter.blur(
+              sigmaX: 4 * anim1.value, sigmaY: 4 * anim1.value),
           child: FadeTransition(
             opacity: anim1,
             child: handleTVRemote
                 ? Shortcuts(shortcuts: <LogicalKeySet, Intent>{
-                    LogicalKeySet(LogicalKeyboardKey.select): const ActivateIntent(),
+                    LogicalKeySet(LogicalKeyboardKey.select):
+                        const ActivateIntent(),
                   }, child: child)
                 : child,
           ),
@@ -85,8 +95,17 @@ class PopupHelper {
     );
   }
 
-  static Future<Object?> confirm({required context, title, titleWidget, text, textWidget, cancelText, onValidate, onCancel}) {
-    assert(text != null || textWidget != null, "You must specify either text or textWidget");
+  static Future<Object?> confirm(
+      {required context,
+      title,
+      titleWidget,
+      text,
+      textWidget,
+      cancelText,
+      onValidate,
+      onCancel}) {
+    assert(text != null || textWidget != null,
+        "You must specify either text or textWidget");
     assert(onValidate != null, "You must specify an handler for onValidate");
     return PopupHelper.showDialog(
       context,
@@ -95,7 +114,10 @@ class PopupHelper {
         padding: const EdgeInsets.all(3.0),
         child: Column(
           mainAxisSize: MainAxisSize.min,
-          children: [textWidget ?? Text(text, style: Theme.of(context).textTheme.bodySmall)],
+          children: [
+            textWidget ??
+                Text(text, style: Theme.of(context).textTheme.bodySmall)
+          ],
         ),
       ),
       button1: okButton(
@@ -127,12 +149,17 @@ class PopupHelper {
       key}) {
     return AlertDialog(
       key: key,
-      titlePadding: EdgeInsets.zero, //const EdgeInsets.fromLTRB(4.0, 14, 5.0, 3),
+      titlePadding:
+          EdgeInsets.zero, //const EdgeInsets.fromLTRB(4.0, 14, 5.0, 3),
       contentPadding: const EdgeInsets.all(4.0),
       actionsPadding: const EdgeInsets.all(8.0),
       insetPadding: const EdgeInsets.all(8.0),
       backgroundColor: Theme.of(context).colorScheme.surfaceContainer,
-      title: titleWidget ?? (title != null ? titleBar(context: context, icon: icon, title: title, buttons: null) : null),
+      title: titleWidget ??
+          (title != null
+              ? titleBar(
+                  context: context, icon: icon, title: title, buttons: null)
+              : null),
       content: body,
       actions: <Widget>[
         if (button1 != null) button1,
@@ -143,11 +170,13 @@ class PopupHelper {
     );
   }
 
-  static Container titleBar({required BuildContext context, IconData? icon, String? title, buttons}) {
+  static Container titleBar(
+      {required BuildContext context, IconData? icon, String? title, buttons}) {
     return Container(
         padding: const EdgeInsets.only(left: 10),
         decoration: BoxDecoration(
-          borderRadius: const BorderRadius.only(topLeft: Radius.circular(20), topRight: Radius.circular(20)),
+          borderRadius: const BorderRadius.only(
+              topLeft: Radius.circular(20), topRight: Radius.circular(20)),
           color: Theme.of(context).colorScheme.primaryContainer,
         ),
         child: Row(
@@ -174,7 +203,10 @@ class PopupHelper {
   }
 
   static Widget cancelButton(
-          {Function? onPress, bool enable = true, dynamic returnValue = false, required BuildContext context}) =>
+          {Function? onPress,
+          bool enable = true,
+          dynamic returnValue = false,
+          required BuildContext context}) =>
       button(
           title: localizationOptions.cancel,
           icon: Icons.cancel,
@@ -185,8 +217,16 @@ class PopupHelper {
                   }
               : null,
           context: context);
-  static Widget okButton({Function? onPress, bool waiting = false, required BuildContext context}) =>
-      button(title: localizationOptions.ok, icon: Icons.check_circle, waiting: waiting, onPress: onPress, context: context);
+  static Widget okButton(
+          {Function? onPress,
+          bool waiting = false,
+          required BuildContext context}) =>
+      button(
+          title: localizationOptions.ok,
+          icon: Icons.check_circle,
+          waiting: waiting,
+          onPress: onPress,
+          context: context);
 
   static Widget helpButton({
     required String title,
@@ -234,13 +274,21 @@ class PopupHelper {
   }
 
   static Widget button(
-      {String? title, IconData? icon, Color? iconColor, bool waiting = false, onPress, Widget? titleWidget, required context}) {
+      {String? title,
+      IconData? icon,
+      Color? iconColor,
+      bool waiting = false,
+      onPress,
+      Widget? titleWidget,
+      required context}) {
     return ElevatedButton(
         style: ElevatedButton.styleFrom(
             padding: const EdgeInsets.all(5.0),
             side: BorderSide(
                 width: 1, // the thickness
-                color: Theme.of(context).colorScheme.primary // the color of the border
+                color: Theme.of(context)
+                    .colorScheme
+                    .primary // the color of the border
                 )),
         onPressed: !waiting ? onPress : null,
         child: titleWidget ??
@@ -256,7 +304,10 @@ class PopupHelper {
                 if (waiting)
                   const Padding(
                     padding: EdgeInsets.only(right: 3.0),
-                    child: SizedBox(width: 15, height: 15, child: CircularProgressIndicator()),
+                    child: SizedBox(
+                        width: 15,
+                        height: 15,
+                        child: CircularProgressIndicator()),
                   ),
                 if (title != null)
                   Row(
@@ -330,7 +381,9 @@ class WaitingStateWithTimer extends State<WaitingWidgetWithTimer> {
     ratio = newValue / duration;
     if (ratio > 0) {
       left = Duration(milliseconds: ((1 - newValue) / ratio).round());
-      _remaining = ratio == 0 ? "----" : "${left.inMinutes} mn ${(left.inSeconds % 60).toString().padLeft(2, '0')} s";
+      _remaining = ratio == 0
+          ? "----"
+          : "${left.inMinutes} mn ${(left.inSeconds % 60).toString().padLeft(2, '0')} s";
     }
     setState(() {
       _progress = newValue;

@@ -4,9 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:intl/intl.dart';
 
-import 'classes/helper.dart/generic_font.dart';
-import 'classes/helper.dart/localization.dart';
-import 'classes/helper.dart/popup_helper.dart';
+import 'classes/helper/generic_font.dart';
+import 'classes/helper/localization.dart';
+import 'classes/helper/popup_helper.dart';
 import 'classes/objects/df_param.dart';
 import 'classes/objects/validator/validator.dart';
 import 'widgets/color_picker.dart';
@@ -27,6 +27,7 @@ class EasyFormBuilder extends StatefulWidget {
       this.icon = false,
       this.iconSizeRatio = 1,
       this.textStyle,
+      this.colorHistory,
       this.formKey});
   final List<DfCfgParam> params;
   final Map<String, dynamic> paramValues;
@@ -44,6 +45,7 @@ class EasyFormBuilder extends StatefulWidget {
 
   final int? forcedColumnNumber;
   final Key? formKey;
+  final List<Color>? colorHistory;
 
   @override
   State<EasyFormBuilder> createState() => _EasyFormBuilderState();
@@ -130,6 +132,7 @@ class _EasyFormBuilderState extends State<EasyFormBuilder> {
           visualDensity: VisualDensity.compact,
           title: param.title,
           color: widget.paramValues[param.id],
+          colorHistory: widget.colorHistory,
           onChange: (value) {
             if (value == widget.paramValues[param.id]) return;
             widget.paramValues[param.id] = value;

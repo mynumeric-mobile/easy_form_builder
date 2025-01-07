@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_gradient_selector/flutter_gradient_selector.dart';
 import 'package:flutter_gradient_selector/helpers/localization.dart';
 
-import '../classes/helper.dart/popup_helper.dart';
+import '../classes/helper/popup_helper.dart';
 
 ///
 /// provide colorpicker widget

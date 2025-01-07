@@ -81,7 +81,8 @@ class DfCfgParam {
   castValue(dynamic val) {
     switch (type) {
       case const (double):
-        return double.tryParse(val.toString()); //for some case double become int force so val to double
+        return double.tryParse(val
+            .toString()); //for some case double become int force so val to double
       case const (int):
         return int.tryParse(val.toString());
       case const (num):
