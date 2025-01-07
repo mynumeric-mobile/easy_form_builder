@@ -2,3 +2,5 @@
 * initial release.
 ## 1.0.0
 * update doc.
+## 1.0.1
+* rename required validator.

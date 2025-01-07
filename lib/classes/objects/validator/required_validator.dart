@@ -2,10 +2,10 @@ import 'package:easy_form_builder/classes/helper.dart/localization.dart';
 
 import 'validator.dart';
 
-class NotNullOrEmptyValidator extends Validator {
+class RequiredValidator extends Validator {
   final String? message;
 
-  NotNullOrEmptyValidator({this.message});
+  RequiredValidator({this.message});
 
   @override
   String get errorMessage => message ?? localizationOptions.emptyField;

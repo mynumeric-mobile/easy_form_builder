@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:easy_form_builder/classes/objects/df_param.dart';
-import 'package:easy_form_builder/classes/objects/validator/not_null_or_empty_validator.dart';
+import 'package:easy_form_builder/classes/objects/validator/required_validator.dart';
 import 'package:easy_form_builder/classes/objects/validator/email_validator.dart';
 
 enum WsFormTypes {
@@ -27,7 +27,7 @@ enum WsFormTypes {
         icon: Icon(Icons.email),
         type: String,
         title: "Email",
-        validators: [NotNullOrEmptyValidator(), EmailValidator()],
+        validators: [RequiredValidator(), EmailValidator()],
       ),
       if (this == WsFormTypes.advancedContact)
         DfCfgParam(
