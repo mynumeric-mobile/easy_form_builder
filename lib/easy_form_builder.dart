@@ -12,8 +12,8 @@ import 'classes/objects/validator/validator.dart';
 import 'widgets/color_picker.dart';
 import 'widgets/textfield.dart';
 
-class FlutterDynamicForm extends StatefulWidget {
-  const FlutterDynamicForm(
+class EasyFormBuilder extends StatefulWidget {
+  const EasyFormBuilder(
       {super.key,
       required this.params,
       required this.paramValues,
@@ -46,10 +46,10 @@ class FlutterDynamicForm extends StatefulWidget {
   final Key? formKey;
 
   @override
-  State<FlutterDynamicForm> createState() => _FlutterDynamicFormState();
+  State<EasyFormBuilder> createState() => _EasyFormBuilderState();
 }
 
-class _FlutterDynamicFormState extends State<FlutterDynamicForm> {
+class _EasyFormBuilderState extends State<EasyFormBuilder> {
   //final ScrollController _scrollController = ScrollController();
   final Map<String, TextEditingController> _textControler = {};
 

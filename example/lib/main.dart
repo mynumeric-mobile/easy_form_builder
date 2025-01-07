@@ -37,7 +37,7 @@ class _MyAppState extends State<MyApp> {
               children: [
                 Padding(
                   padding: const EdgeInsets.all(8.0),
-                  child: FlutterDynamicForm(
+                  child: EasyFormBuilder(
                     formKey: formKey,
                     params: WsFormTypes.simpleContact.wsParams,
                     paramValues: values,
