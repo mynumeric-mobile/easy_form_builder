@@ -14,7 +14,7 @@ class EmailValidator extends Validator {
   bool isValid(value, Map<String, dynamic> paramValues) {
     var email = value as String?;
 
-    if (email == null) {
+    if (email == null || email == "") {
       return true;
     }
     RegExp emailRegExp = RegExp(r"^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$");

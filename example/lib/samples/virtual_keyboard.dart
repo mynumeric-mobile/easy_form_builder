@@ -21,12 +21,11 @@ class VirtualKeyboard extends StatefulWidget {
 class _MyAppState extends State<VirtualKeyboard> {
   Map<String, dynamic> values = {};
   var formKey = GlobalKey<FormState>();
+
   TextEditingController? currentController;
   String? currentparamId;
   var isKeyboardVisible = false;
-  //var controllerKeyboard = TextEditingController();
   late double keyboardHeight;
-  GlobalKey keyboardKey = GlobalKey();
 
   @override
   void initState() {
@@ -118,7 +117,6 @@ class _MyAppState extends State<VirtualKeyboard> {
                   SizedBox(
                     height: keyboardHeight,
                     child: KeyboardAux(
-                      key: keyboardKey,
                       alwaysCaps: false,
                       height: keyboardHeight,
                       controller: currentController,

@@ -18,3 +18,5 @@
 * Add samples code
 ## 1.0.8
 * Adding virtual keyboard sample
+## 1.0.9
+* Validor improvment
