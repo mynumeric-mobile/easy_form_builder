@@ -28,7 +28,9 @@ class EasyFormBuilder extends StatefulWidget {
       this.iconSizeRatio = 1,
       this.textStyle,
       this.colorHistory,
-      this.formKey});
+      this.formKey,
+      this.textFieldOnFocus,
+      this.forcedKeyboardType});
   final List<DfCfgParam> params;
   final Map<String, dynamic> paramValues;
   final Function(String modifiedParamId)? onChange;
@@ -41,7 +43,11 @@ class EasyFormBuilder extends StatefulWidget {
   final bool border;
   final bool icon;
   final double iconSizeRatio;
+
+  final TextInputType? forcedKeyboardType;
   final bool forceReadOnly;
+
+  final Null Function(TextEditingController? controller, String paramId)? textFieldOnFocus;
 
   final int? forcedColumnNumber;
   final Key? formKey;
@@ -54,6 +60,7 @@ class EasyFormBuilder extends StatefulWidget {
 class _EasyFormBuilderState extends State<EasyFormBuilder> {
   //final ScrollController _scrollController = ScrollController();
   final Map<String, TextEditingController> _textControler = {};
+  final Map<String, FocusNode> _textFocusNode = {};
 
   @override
   void initState() {
@@ -62,7 +69,9 @@ class _EasyFormBuilderState extends State<EasyFormBuilder> {
 
   @override
   void dispose() {
-    //_scrollController.dispose();
+    for (FocusNode n in _textFocusNode.values) {
+      n.dispose();
+    }
     super.dispose();
   }
 
@@ -184,6 +193,15 @@ class _EasyFormBuilderState extends State<EasyFormBuilder> {
     if (_textControler[param.id] == null) {
       _textControler[param.id] =
           TextEditingController(text: (widget.paramValues[param.id] ?? param.defaultValue ?? "").toString());
+      if (widget.textFieldOnFocus != null) {
+        var fNode = FocusNode();
+        fNode.addListener(() {
+          //var hasFocus = _textFocusNode.map((name, node) => node.hasFocus());
+          var hasFocus = fNode.hasFocus;
+          widget.textFieldOnFocus!(hasFocus ? _textControler[param.id] : null, param.id);
+        });
+        _textFocusNode[param.id] = fNode;
+      }
     }
 
     var icon = param.icon;
@@ -195,11 +213,13 @@ class _EasyFormBuilderState extends State<EasyFormBuilder> {
       );
     }
 
-    return BnTextField(
+    return EFBTextField(
         name: param.title,
-        keyboardType: _getKeyboardType(param.type, param.maxTextFieldLine),
+        keyboardType: widget.forcedKeyboardType ?? _getKeyboardType(param.type, param.maxTextFieldLine),
+        focus: _textFocusNode[param.id],
         prefixIcon: widget.icon ? icon : null,
         maxLine: param.maxTextFieldLine,
+        dismissOnTapOutside: false,
         border: widget.border,
         style: widget.textStyle,
         controler: _textControler[param.id],

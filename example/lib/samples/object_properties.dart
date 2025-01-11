@@ -4,7 +4,7 @@ import 'package:easy_form_builder/classes/objects/df_param.dart';
 import 'package:easy_form_builder/easy_form_builder.dart';
 import 'package:flutter/material.dart';
 
-import 'car.dart';
+import '../objects/car.dart';
 
 class ObjectProperties extends StatefulWidget {
   const ObjectProperties({super.key});

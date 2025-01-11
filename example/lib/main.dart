@@ -1,7 +1,8 @@
 import 'package:easy_form_builder_example/samples/colorpicker.dart';
 import 'package:easy_form_builder_example/samples/dropdownlist.dart';
 import 'package:easy_form_builder_example/samples/linked_dropdownlist.dart';
-import 'package:easy_form_builder_example/samples/objectProperties.dart';
+import 'package:easy_form_builder_example/samples/object_properties.dart';
+import 'package:easy_form_builder_example/samples/virtual_keyboard.dart';
 import 'package:flutter/material.dart';
 
 import 'samples/field_displayable_form.dart';
@@ -97,6 +98,15 @@ class MyHome extends StatelessWidget {
                   Navigator.push(context, MaterialPageRoute<void>(builder: (BuildContext context) => const ColorPicker()));
                 },
                 child: const Text("Color Picker"),
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.push(context, MaterialPageRoute<void>(builder: (BuildContext context) => const VirtualKeyboard()));
+                },
+                child: const Text("Virtual Keyboard"),
               ),
             ],
           ),

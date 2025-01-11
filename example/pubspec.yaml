@@ -19,6 +19,7 @@ dependencies:
 
   easy_form_builder:
     path: ../
+  virtual_keyboard_custom_layout: ^1.0.1
 
   cupertino_icons: ^1.0.8
 

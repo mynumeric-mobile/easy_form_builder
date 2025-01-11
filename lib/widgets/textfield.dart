@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-class BnTextField extends StatefulWidget {
+class EFBTextField extends StatefulWidget {
   final String? name;
   final TextEditingController? controler;
   final FocusNode? focus;
@@ -19,8 +19,9 @@ class BnTextField extends StatefulWidget {
   final String? initialValue;
   final bool border;
   final int maxLine;
+  final GestureTapCallback? onTap;
 
-  const BnTextField(
+  const EFBTextField(
       {super.key,
       this.name,
       this.controler,
@@ -38,13 +39,14 @@ class BnTextField extends StatefulWidget {
       this.initialValue,
       this.border = false,
       this.maxLine = 1,
+      this.onTap,
       this.helperText});
 
   @override
-  State<BnTextField> createState() => _BnTextFieldState();
+  State<EFBTextField> createState() => _EFBTextFieldState();
 }
 
-class _BnTextFieldState extends State<BnTextField> {
+class _EFBTextFieldState extends State<EFBTextField> {
   late bool _obscured;
 
   @override
@@ -74,6 +76,7 @@ class _BnTextFieldState extends State<BnTextField> {
       initialValue: widget.initialValue,
       controller: widget.controler,
       focusNode: widget.focus,
+      onTap: widget.onTap,
       validator: (value) {
         return widget.validator?.call(value);
       },
