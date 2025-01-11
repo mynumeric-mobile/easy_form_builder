@@ -16,3 +16,5 @@
 * adjust padding on textfield using border. 
 ## 1.0.7
 * Add samples code
+## 1.0.8
+* Adding virtual keyboard sample
